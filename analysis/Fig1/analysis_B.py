@@ -1,9 +1,6 @@
-import math
 import os
-
 import numpy as np
 from matplotlib import pyplot as plt
-
 from common.constants import FIGURES_LOCATION, EXPERIMENTS_LOCATION
 from data_layer.cross_correlation import xcorr_w_lags
 from data_layer.preprocess_data import _get_cells_data_from_csv

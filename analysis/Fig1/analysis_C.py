@@ -1,11 +1,7 @@
-import math
 import os
-from typing import Dict, List
-
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-
 from common.config import PAIR_DISTANCE_THRESHOLD
 from common.constants import FIGURES_LOCATION, EXPERIMENTS_LOCATION
 from data_layer.cross_correlation import xcorr_w_lags
