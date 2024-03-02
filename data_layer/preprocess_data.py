@@ -26,7 +26,7 @@ def _normalize(Ft, Fmin, Fmax):
 
 
 def _extract(raw_data, num_of_cells: int):
-    """ Extracts the data of each cell from the raw data """
+    """ Extracts the data of each cell from the raw_timeseries data """
     cells_data: List[pd.DataFrame] = []
     for i in range(num_of_cells):
         curr_cell_df: pd.DataFrame = raw_data.iloc[:, (1 + (3 * i)):(4 + (3 * i))]
@@ -117,7 +117,7 @@ def extract_clean_and_normalize(path: str):
 
         print(f"Saving Data To {num_of_cells} CSVs + 1 for all Features")
         filename_without_extension = filename.replace('.csv', '')
-        output_location = path.replace('raw', 'processed')+f'/{filename_without_extension}'
+        output_location = path.replace('raw_timeseries', 'processed_timeseries')+f'/{filename_without_extension}'
         Path(f'{output_location}').mkdir(parents=True, exist_ok=True)
 
         for i in range(num_of_cells):
@@ -172,7 +172,7 @@ def extract_clean_and_normalize(path: str):
 #
 
 if __name__ == '__main__':
-    raw_data_loc = '../data/raw/'
+    raw_data_loc = '../data/raw_timeseries/'
     for experiment_folder in os.listdir(raw_data_loc):
         print(f"Extracting data from {experiment_folder}")
         extract_clean_and_normalize(raw_data_loc + experiment_folder)
