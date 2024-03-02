@@ -3,7 +3,7 @@ import pandas as pd
 
 class FrequencyTranslator():
     def __init__(self):
-        self.frequencies_df = pd.read_csv(f'./common/frame_to_secodns.csv')
+        self.frequencies_df = pd.read_csv(f'./common/frame_to_seconds.csv')
 
     def get_movie_in_minutes(self, experiment_type: str, experiment_name: str):
         """ Returns the movie length in minutes """
