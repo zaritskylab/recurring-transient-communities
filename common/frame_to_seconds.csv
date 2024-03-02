@@ -8,53 +8,53 @@ psc_niche,GCaMP 10-1,3.558,600
 psc_niche,GCaMP 11-1_01,3.16,600
 psc_niche,GCaMP 12-1,4.189,600
 psc_niche,GCaMP 15-1_02,3.545,600
-mid_third_wild_type,sample_1,6.77,500
-mid_third_wild_type,sample_2,5.371,500
-mid_third_wild_type,sample_3,6.392,600
-mid_third_wild_type,sample_4,4.721,600
+mid_third_wild_type,sample_4,6.77,500
+mid_third_wild_type,sample_1,5.371,500
+mid_third_wild_type,sample_9,6.392,600
+mid_third_wild_type,sample_11,4.721,600
 mid_third_wild_type,sample_5,4.06,600
-mid_third_wild_type,sample_6,4.184,600
-mid_third_wild_type,sample_7,3.436,600
-mid_third_wild_type,sample_8,4.779,528
-mid_third_wild_type,sample_9,4.974,600
-mid_third_wild_type,sample_10,2.614,600
-mid_third_wild_type,sample_11,2.569,600
-mid_third_wild_type,sample_12,2.341,700
-cbx_inhibitor_3.125,55_CBX 3.125 GCaMP 2-1,3.555,600
-cbx_inhibitor_3.125,53_CBX 3.125 GCaMP 4-1_01,2.609,600
-cbx_inhibitor_3.125,54_CBX 3.125 GCaMP 5-1,4.068,600
-cbx_inhibitor_12.5,18_CBX 12.5 GCaMP 2-1_01,4.353,571
-cbx_inhibitor_12.5,45_CBX 12.5 GCaMP 3-1,5.528,600
-cbx_inhibitor_12.5,52_CBX 12.5 GCaMP 4-1_03,8.719,600
-cbx_inhibitor_12.5,23_CBX 12.5 GCaMP 6-1_01,3.991,559
-cbx_inhibitor_washout,63_CBX washout 2-1,3.614,600
-cbx_inhibitor_washout,45_CBX washout 4-1,3.547,600
-cbx_inhibitor_washout,57_CBX washout 5-1,3.112,600
-cbx_inhibitor_washout,83_CBX washout 6-1_01,3.088,600
-zpg_RNAi_all_cells,27_zpg RNAi GCaMP 1-1_05 all cells,3.529,600
-zpg_RNAi_all_cells,13_zpg RNAi GCaMP 2-1_01 all cells,3.316,600
-zpg_RNAi_all_cells,27_zpg RNAi GCaMP 4-1_03R all cells,7.131,600
-zpg_RNAi_all_cells,22_zpg RNAi GCaMP 5-1 all cells,4.844,500
-zpg_RNAi_all_cells,20_zpg RNAi GCaMP 6-1 all cells,5.679,500
-zpg_RNAi_all_cells,20_zpg RNAi GCaMP 8-1 all cells,5.571,600
-zpg_RNAi_all_cells,38_zpg RNAi GCaMP 9-1_01 all cells,4.646,600
-zpg_RNAi_all_cells,26_zpg RNAi GCaMP 11-1 all cells,3.542,600
-late_second_wild_type,19_GCaMP late 2nd 1-1_01 all cells,2.8,600
-late_second_wild_type,11_GCaMP late 2nd 2-1_01 all cells,2.269,600
-late_second_wild_type,18_GCaMP late 2nd 5-1_01 all cells,2.73,600
-late_second_wild_type,27_GCaMP late 2nd 6-1 all cells,3.029,600
-early_third_wild_type,80_GCaMP early third 1-1 all cells,3.129,600
-early_third_wild_type,86_GCaMP early third 2-1 all cells,3.607,600
-early_third_wild_type,52_GCaMP early third 3-1 all cells,3.654,600
-early_third_wild_type,19_GCaMP early third 4-1 all cells,2.289,600
-early_third_wild_type,32_GCaMP early third 5-1_01 all cells,2.57,600
-late_second_zpg_RNAi,12_zpg RNAi late 2nd 6-1_02 all cells,3.334,600
-late_second_zpg_RNAi,13_zpg RNAi late 2nd 7-1_02 all cells,2.557,600
-late_second_zpg_RNAi,16_zpg RNAi late 2nd 1-1_02 all cells,2.801,600
-early_third_zpg_RNAi,16_zpg RNAi early third 6-1 all cells,2.99,600
-early_third_zpg_RNAi,20_zpg RNAi early third 5-1_02 all cells,2.845,600
-early_third_zpg_RNAi,23_zpg RNAi early third 3-1_01 all cells,3.123,600
-early_third_zpg_RNAi,34_zpg RNAi early third 2-1_04 all cells,4.038,600
+mid_third_wild_type,sample_7,4.184,600
+mid_third_wild_type,sample_8,3.436,600
+mid_third_wild_type,sample_12,4.779,528
+mid_third_wild_type,sample_10,4.974,600
+mid_third_wild_type,sample_2,2.614,600
+mid_third_wild_type,sample_3,2.569,600
+mid_third_wild_type,sample_6,2.341,700
+cbx_inhibitor_3.125,sample_1,3.555,600
+cbx_inhibitor_3.125,sample_2,2.609,600
+cbx_inhibitor_3.125,sample_3,4.068,600
+cbx_inhibitor_12.5,sample_4,4.353,571
+cbx_inhibitor_12.5,sample_2,5.528,600
+cbx_inhibitor_12.5,sample_3,8.719,600
+cbx_inhibitor_12.5,sample_1,3.991,559
+cbx_inhibitor_washout,sample_2,3.614,600
+cbx_inhibitor_washout,sample_3,3.547,600
+cbx_inhibitor_washout,sample_4,3.112,600
+cbx_inhibitor_washout,sample_1,3.088,600
+mid_third_zpg_RNAi,sample_4,3.529,600
+mid_third_zpg_RNAi,sample_5,3.316,600
+mid_third_zpg_RNAi,sample_3,7.131,600
+mid_third_zpg_RNAi,sample_8,4.844,500
+mid_third_zpg_RNAi,sample_1,5.679,500
+mid_third_zpg_RNAi,sample_6,5.571,600
+mid_third_zpg_RNAi,sample_2,4.646,600
+mid_third_zpg_RNAi,sample_7,3.542,600
+late_second_wild_type,sample_4,2.8,600
+late_second_wild_type,sample_3,2.269,600
+late_second_wild_type,sample_2,2.73,600
+late_second_wild_type,sample_1,3.029,600
+early_third_wild_type,sample_1,3.129,600
+early_third_wild_type,sample_3,3.607,600
+early_third_wild_type,sample_4,3.654,600
+early_third_wild_type,sample_5,2.289,600
+early_third_wild_type,sample_2,2.57,600
+late_second_zpg_RNAi,sample_1,3.334,600
+late_second_zpg_RNAi,sample_3,2.557,600
+late_second_zpg_RNAi,sample_2,2.801,600
+early_third_zpg_RNAi,sample_1,2.99,600
+early_third_zpg_RNAi,sample_4,2.845,600
+early_third_zpg_RNAi,sample_2,3.123,600
+early_third_zpg_RNAi,sample_3,4.038,600
 zpg_RNAi,27_zpg RNAi GCaMP 1-1_05,3.529,600
 zpg_RNAi,13_zpg RNAi GCaMP 2-1_01,3.316,600
 zpg_RNAi,27_zpg RNAi GCaMP 4-1_03R,7.131,600
