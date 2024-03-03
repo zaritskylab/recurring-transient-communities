@@ -62,3 +62,7 @@ class FrequencyTranslator():
     def get_names_df(self) -> pd.DataFrame:
         """ Returns the movies length in minutes """
         return self.frequencies_df[['experiment_type', 'experiment_name']]
+
+    def get_records_below_fps(self, fps: float) -> pd.DataFrame:
+        """ Returns the movies length in minutes """
+        return self.frequencies_df[self.frequencies_df['frame_to_seconds'] < (1/fps)]
