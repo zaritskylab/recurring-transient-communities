@@ -1,12 +1,12 @@
 from .arcos_wrapper import ArcosParams
 
-PARAMS = ArcosParams(
+DEFAULT_PARAMS = ArcosParams(
         # According to ARCOS paper defaults
         smoothK=3,
         binThr=0.4,
         biasMet='runmed',
         peakThr=0.3,
-        biasK=51,
+        biasK=25,
 
         # Small Radius (~2 cell diameters)
         neighborhoodSize=14,
