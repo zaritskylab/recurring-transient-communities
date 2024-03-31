@@ -18,3 +18,4 @@ seaborn==0.11.2
 tqdm==4.64.0
 mashumaro==1.24
 Shapely==1.8.5.post1
+libpysal==4.7.0
