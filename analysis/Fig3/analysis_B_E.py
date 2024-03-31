@@ -47,4 +47,4 @@ def main():
     selected_experiments = ['late_second_zpg_RNAi', 'early_third_zpg_RNAi', 'mid_third_zpg_RNAi']
     df = pd.read_csv(f'./data/cross_experiment_arcos_agg_data.csv')
     df = df[df['experiment_type'].isin(selected_experiments)]
-    plot(df, experiments_order=selected_experiments, fig_name='C')
+    plot(df, experiments_order=selected_experiments, fig_name='E')

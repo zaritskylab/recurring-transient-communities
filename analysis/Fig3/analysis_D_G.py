@@ -1,17 +1,16 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-from matplotlib.lines import Line2D
 import matplotlib.patches as mpatches
+from matplotlib.lines import Line2D
 from common.constants import FIGURES_LOCATION, HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION
-from common.significance_calculator import statistical_test_wrapper, StatisticalTest
 
 
-def plot(df: pd.DataFrame, x_labels_and_order):
+def plot(df: pd.DataFrame, x_labels_and_order, fig_name):
 
     x = [i + 1 for i in range(len(x_labels_and_order))]
 
-    fig, ax = plt.subplots(figsize=(20, 10))
+    fig, ax = plt.subplots(figsize=(8, 8))
     cmap = plt.cm.Greys
     axis_map = {}
 
@@ -52,18 +51,18 @@ def plot(df: pd.DataFrame, x_labels_and_order):
     handles.extend([patch1, patch2, line1])
 
     plt.legend(handles=handles, fontsize=18, loc='upper right')
+    plt.yticks([0, 9, 18], fontsize=18, rotation=90)
 
     plt.tight_layout()
-    plt.savefig(f'{FIGURES_LOCATION}Fig_2_E.png')
+    plt.savefig(f'{FIGURES_LOCATION}Fig_3_{fig_name}.png')
     plt.close(fig=fig)
 
 
 
-def analyze_aggregated_data():
+def analyze_aggregated_data(fig_name, x_labels_and_order):
     df = pd.read_csv(f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}/agg_results_OLD.csv')
     df['hotspots'] = 1
 
-    x_labels_and_order = ['mid_third_wild_type', 'mid_third_zpg_RNAi', 'cbx_inhibitor_3.125', 'cbx_inhibitor_12.5', 'cbx_inhibitor_washout']
     df = df[df['experiment_type'].isin(x_labels_and_order)]
 
     # Calculating the p-values based on the is_significant field
@@ -71,9 +70,6 @@ def analyze_aggregated_data():
     df[p_val_field] = df.apply(lambda row: 1 if row['pvalue'] < 0.05 and row['permutations_count'] > 100 else 0, axis=1)
     df['enough_statistics'] = df.apply(lambda row: 1 if row['permutations_count'] > 100 else 0, axis=1)
 
-    pvalues = statistical_test_wrapper(df[['experiment_type', p_val_field]], p_val_field,
-                                       test_type=StatisticalTest.FISHERS_EXACT_TEST,
-                                       static_experiment_type='mid_third_wild_type')
     df = df[['experiment_type', 'is_significant', 'enough_statistics', 'hotspots']].groupby('experiment_type',
                                                                 as_index=False).sum()
 
@@ -90,8 +86,13 @@ def analyze_aggregated_data():
     df.drop(columns=['order'], inplace=True)
     df.reset_index(inplace=True, drop=True)
 
-    plot(df, x_labels_and_order)
+    plot(df, x_labels_and_order, fig_name)
 
+def main():
+    selected_experiments = ['late_second_wild_type', 'early_third_wild_type', 'mid_third_wild_type']
+    analyze_aggregated_data(x_labels_and_order=selected_experiments, fig_name='D')
 
-if __name__ == '__main__':
-    analyze_aggregated_data()
+    selected_experiments = ['late_second_zpg_RNAi', 'early_third_zpg_RNAi', 'mid_third_zpg_RNAi']
+    analyze_aggregated_data(x_labels_and_order=selected_experiments, fig_name='G')
+
+main()
