@@ -1,7 +1,7 @@
 import os
 import numpy as np
 from matplotlib import pyplot as plt
-from common.constants import FIGURES_LOCATION, EXPERIMENTS_LOCATION
+from common.constants import FIGURES_LOCATION, PROCESSED_TIMESERIES_LOCATION
 from data_layer.cross_correlation import xcorr_w_lags
 from data_layer.preprocess_data import _get_cells_data_from_csv
 
@@ -40,7 +40,7 @@ def pairs_correlation_by_distance(cells_data, total_cells, time_series_len):
 
 
 def main():
-    relevant_experiment_folder = f'{EXPERIMENTS_LOCATION}processed/wild_type/sample_7/'
+    relevant_experiment_folder = f'{PROCESSED_TIMESERIES_LOCATION}/mid_third_wild_type/sample_8/'
     total_cells = len(list(filter(lambda file_name: file_name.startswith('cell_') and file_name.endswith('.csv'),
                                   os.listdir(relevant_experiment_folder)
                                   )))

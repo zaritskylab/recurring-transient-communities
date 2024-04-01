@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from common.config import PAIR_DISTANCE_THRESHOLD
-from common.constants import FIGURES_LOCATION, EXPERIMENTS_LOCATION
+from common.constants import FIGURES_LOCATION, PROCESSED_TIMESERIES_LOCATION
 from data_layer.cross_correlation import xcorr_w_lags
 from data_layer.preprocess_data import _get_cells_data_from_csv
 
@@ -64,7 +64,7 @@ def correlation_density_function_by_distance_group(cells_data, total_cells, time
     plot(far_scores, 'Far Pairs', near_scores, 'Close Pairs')
 
 def main():
-    relevant_experiment_folder = f'{EXPERIMENTS_LOCATION}processed/wild_type/sample_7/'
+    relevant_experiment_folder = f'{PROCESSED_TIMESERIES_LOCATION}/mid_third_wild_type/sample_8/'
     total_cells = len(list(filter(lambda file_name: file_name.startswith('cell_') and file_name.endswith('.csv'),
                                   os.listdir(relevant_experiment_folder)
                                   )))
