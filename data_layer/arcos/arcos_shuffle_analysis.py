@@ -156,8 +156,8 @@ def unify_significance_data():
     unified_actual_data = {}
     unified_shuffled_data = {}
 
-    unified_actual_data_filename = 'unified_actual_data.json'
-    unified_shuffled_data_filename = 'unified_shuffled_data.json'
+    unified_actual_data_filename = 'unified_observed_data.json'
+    unified_shuffled_data_filename = 'unified_in_silico_data.json'
 
     for dir in os.listdir(ARCOS_SHUFFLE_ANALYSIS_LOCATION):
         experiment_type = dir

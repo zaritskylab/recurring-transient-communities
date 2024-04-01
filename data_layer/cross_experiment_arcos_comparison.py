@@ -12,8 +12,8 @@ from common.significance_calculator import SignificanceMethod, SignificanceCalcu
 def generate_cross_experiment_spatial_significance_data():
     significance_method = SignificanceMethod.BOOTSTRAP
 
-    observed_data_loc = f'{EXPERIMENTS_LOCATION}/arcos_shuffle_analysis/observed_data.json'
-    in_silico_data_loc = f'{EXPERIMENTS_LOCATION}/arcos_shuffle_analysis/in_silico_data.json'
+    observed_data_loc = f'{EXPERIMENTS_LOCATION}/arcos_shuffle_analysis/unified_observed_data.json'
+    in_silico_data_loc = f'{EXPERIMENTS_LOCATION}/arcos_shuffle_analysis/unified_in_silico_data.json'
 
     with open(observed_data_loc,'r') as f:
         observed_data = json.load(f)
