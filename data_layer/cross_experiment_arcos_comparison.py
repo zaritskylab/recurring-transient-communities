@@ -9,7 +9,7 @@ from common.frame_to_frequency import FrequencyTranslator
 from common.significance_calculator import SignificanceMethod, SignificanceCalculator
 
 
-def generate_cross_experiment_data():
+def generate_cross_experiment_spatial_significance_data():
     significance_method = SignificanceMethod.BOOTSTRAP
 
     observed_data_loc = f'{EXPERIMENTS_LOCATION}/arcos_shuffle_analysis/observed_data.json'
