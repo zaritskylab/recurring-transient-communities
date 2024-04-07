@@ -1,5 +1,6 @@
 import json
 import os
+from copy import deepcopy
 from pathlib import Path
 from typing import Dict, List
 import numpy as np
@@ -120,7 +121,7 @@ def generate_significance_data_for_experiment(experiment_type, experiment_name, 
     cell_ids = list(original_arcos_input_df['cell_id'].unique())
     permutations = _generate_distinct_permutations(cell_ids, n=gen_amnt)
 
-    params = DEFAULT_PARAMS
+    params = deepcopy(DEFAULT_PARAMS)
     if lag_in_seconds:
         params.nPrev = FrequencyTranslator().temporal_lag_to_frames(experiment_type, experiment_name, lag_in_seconds)
 

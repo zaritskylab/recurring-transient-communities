@@ -3,6 +3,7 @@ import random
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
 import numpy as np
+from debugpy.common.compat import izip
 
 
 @dataclass

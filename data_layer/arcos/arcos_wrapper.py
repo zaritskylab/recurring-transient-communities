@@ -28,25 +28,6 @@ class ArcosParams():
     peakThr: Optional[float] = None
     biasK: Optional[int] = None
 
-INITIAL_PARAMS = ArcosParams(
-    x_col='x_microns',
-    y_col='y_microns',
-    frame_column='frame',
-    id_column='cell_id',
-    measurement_column='normalized_intensity',
-    clid_column='collid',
-    smoothK=4,
-    binThr=0.19,
-    biasMet='none',
-    neighborhoodSize=40,
-    minClsz=2,
-    nPrev=3,
-    minDuration=1,
-    minTotalEventSize=1,
-    peakThr=None,
-    biasK=None
-)
-
 
 def _arcos_wrapper(input_df: pd.DataFrame, params: ArcosParams, should_binarize=True):
     """ Wrapper for the ARCOS framework. """

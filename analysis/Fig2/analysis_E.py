@@ -60,7 +60,7 @@ def plot(df: pd.DataFrame, x_labels_and_order):
 
 
 def analyze_aggregated_data():
-    df = pd.read_csv(f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}/agg_results_OLD.csv')
+    df = pd.read_csv(f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}/aggregated_results.csv')
     df['hotspots'] = 1
 
     x_labels_and_order = ['mid_third_wild_type', 'mid_third_zpg_RNAi', 'cbx_inhibitor_3.125', 'cbx_inhibitor_12.5', 'cbx_inhibitor_washout']
