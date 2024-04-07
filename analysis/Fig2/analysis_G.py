@@ -31,7 +31,7 @@ def plot(df: pd.DataFrame):
     plt.yticks([0, 8, 16], fontsize=14, rotation=90)
 
     plt.tight_layout()
-    plt.savefig(f'{FIGURES_LOCATION}Fig_2_F.png')
+    plt.savefig(f'{FIGURES_LOCATION}Fig_2_G.png')
     plt.close(fig)
 
 
@@ -73,7 +73,7 @@ def analyze():
         non_hs_total_cells = []
         first_cells_in_hotspot = []
 
-        agg_df_record = agg_df[(agg_df['experiment_name'] == experiment_hotspot.experiment_name) & (agg_df['hotspot_id'] == experiment_hotspot.id)]
+        agg_df_record = agg_df[(agg_df['experiment_type'] == experiment_hotspot.experiment_type) & (agg_df['experiment_name'] == experiment_hotspot.experiment_name) & (agg_df['hotspot_id'] == experiment_hotspot.id)]
         if len(agg_df_record) == 1 and int(agg_df_record['is_significant']) == 1:
             for coll_event in relevant_coll_events:
                 coll_event_df = arcos_df[arcos_df['collid'] == coll_event]
@@ -117,3 +117,4 @@ def analyze():
 def main():
     analyze()
 
+main()
