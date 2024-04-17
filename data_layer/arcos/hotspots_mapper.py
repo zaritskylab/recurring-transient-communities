@@ -423,8 +423,6 @@ def _find_cell_with_same_activations(original_cell_ix: int, activations: List[in
     for ix, activation in enumerate(activations):
         if activation >= required_activation:
             res.append(Candidate(cell_id=ix, delta_activations=(activation-required_activation)/float(required_activation)))
-        elif int(required_activation) <= activation <= int(required_activation * 1.2):  # To eliminate same hub swap, add: and ix not in old_cells
-            res.append(Candidate(cell_id=ix, delta_activations=(activation-required_activation)/float(required_activation)))
     return res
 
 
