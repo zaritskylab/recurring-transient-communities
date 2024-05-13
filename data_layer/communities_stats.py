@@ -1,11 +1,12 @@
 import os
 from copy import deepcopy
+from pathlib import Path
 from typing import List
 
 import numpy as np
 import pandas as pd
 
-from common.constants import ARCOS_OUTPUT_LOCATION
+from common.constants import ARCOS_OUTPUT_LOCATION, ARCOS_COMMUNITIES_STATS_LOCATION
 from common.data_classes import Community
 from common.frame_to_frequency import FrequencyTranslator
 
@@ -108,6 +109,18 @@ def _get_collid_to_community_mapping(df: pd.DataFrame):
     return community_to_collids, collid_to_communities, all_communities
 
 
+def write_experiment_communities_statistics_to_csv(all_communities, experiment_type, experiment_name):
+    df = pd.DataFrame()
+    for community in all_communities:
+        df = df.append(community.to_dict(), ignore_index=True)
+
+    target_folder = f'{ARCOS_COMMUNITIES_STATS_LOCATION}/{experiment_type}/'
+    if not os.path.exists(target_folder):
+        Path(f'{target_folder}').mkdir(parents=True, exist_ok=True)
+
+    df.to_csv(target_folder + f'{experiment_name}_communities_statistics.csv')
+
+
 def generate_per_sample_community_statistics(experiment_types: List[str]):
     freq_translator = FrequencyTranslator()
     all_experiments_df = pd.DataFrame()
@@ -166,6 +179,8 @@ def generate_per_sample_community_statistics(experiment_types: List[str]):
 
                 statistics_df = pd.concat([statistics_df, pd.DataFrame([experiment_stats_copy])], ignore_index=True)
 
+            write_experiment_communities_statistics_to_csv(all_communities, experiment_type, experiment_name)
             all_experiments_df = pd.concat((all_experiments_df, statistics_df), ignore_index=True)
 
     all_experiments_df.to_csv('./data/cross_experiment_communities_statistics.csv', index=False)
+

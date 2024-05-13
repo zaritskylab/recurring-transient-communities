@@ -88,3 +88,6 @@ def generate_cross_experiment_spatial_significance_data():
 
     df = pd.DataFrame(data)
     df.to_csv('./data/cross_experiment_arcos_agg_data.csv', index=False)
+
+    si_df = pd.DataFrame(si_data)
+    si_df.to_csv('./data/cross_experiment_arcos_agg_si_data.csv', index=False)
