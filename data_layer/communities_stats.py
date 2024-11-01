@@ -2,10 +2,8 @@ import os
 from copy import deepcopy
 from pathlib import Path
 from typing import List
-
 import numpy as np
 import pandas as pd
-
 from common.constants import ARCOS_OUTPUT_LOCATION, ARCOS_COMMUNITIES_STATS_LOCATION
 from common.data_classes import Community
 from common.frame_to_frequency import FrequencyTranslator

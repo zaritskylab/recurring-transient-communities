@@ -194,7 +194,7 @@ def unify_significance_data():
         json.dump(unified_shuffled_data, f)
 
 
-def main():
+if __name__ == '__main__':
     for experiment_type in os.listdir(ARCOS_INPUT_LOCATION):
         for experiment_name_file in os.listdir(f'{ARCOS_INPUT_LOCATION}/{experiment_type}'):
             experiment_name = experiment_name_file.replace('.csv', '')

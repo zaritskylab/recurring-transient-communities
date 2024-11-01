@@ -1,9 +1,12 @@
 import math
+import os
+from pathlib import Path
 from typing import List
 import numpy as np
 import pandas as pd
 from shapely.geometry import Point, Polygon
 
+from common.constants import HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION
 
 
 def _get_mean_events_in_area(arcos_df: pd.DataFrame, heat_map, area_of_interest: List[int]):
@@ -28,7 +31,7 @@ def _get_mean_events_in_area(arcos_df: pd.DataFrame, heat_map, area_of_interest:
 
     return np.mean(area_events)
 
-def find_arcos_hot_spots(arcos_df: pd.DataFrame, check_mean_in_area: List[int] = None):
+def find_arcos_hot_spots(arcos_df: pd.DataFrame, check_mean_in_area: List[int] = None, dump_loc: str = None):
 
     num_of_cells = arcos_df.cell_id.nunique()
     cells_xs = []
@@ -104,6 +107,11 @@ def find_arcos_hot_spots(arcos_df: pd.DataFrame, check_mean_in_area: List[int] =
     area_mean = None
     if check_mean_in_area:
         area_mean = _get_mean_events_in_area(arcos_df, heat_map, check_mean_in_area)
+    if dump_loc:
+        target_folder = f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}{dump_loc}'
+        if not os.path.exists(target_folder):
+            Path(f'{target_folder}').mkdir(parents=True, exist_ok=True)
+        np.save(target_folder, heat_map)
 
     return polygons, heat_map, all_events_df, num_of_cells, distinct_cells, cells_xs, cells_ys, area_mean
 

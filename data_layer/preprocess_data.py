@@ -127,49 +127,6 @@ def extract_clean_and_normalize(path: str):
 
 
 
-# def write_append_to_csv(analysis_folder, df, file_name, should_create_new_file):
-#     if analysis_folder is None: #for unified CSVs
-#         loc = f'{PROJECT_LOCATION}{file_name}.csv'
-#     else:
-#         loc = f'{PROJECT_LOCATION}{analysis_folder}/{file_name}.csv'
-#
-#     if should_create_new_file or (not os.path.isfile(loc)):
-#         df.to_csv(loc, index=False, header='column_names')
-#     else:  # else it exists so append without writing the header
-#         df.to_csv(loc, index=False, mode='a', header=False)
-
-
-# def generate_corrs_data_for_experiment_type(experiment_type, lags, cutoffs):
-#     loc = f'{EXPERIMENTS_LOCATION}{experiment_type}/'
-#     data_folder_subdirs = [name for name in os.listdir(loc) if os.path.isdir(os.path.join(loc, name))]
-#
-#     for data_folder_subdir in data_folder_subdirs:
-#         experiment_data_folder = f'{loc}{data_folder_subdir}/data/'
-#         num_of_cells = int(data_folder_subdir.split('_')[0])
-#
-#         print(f"\n>>>>>> START WORKING ON DIR: {data_folder_subdir} >>>>>>")
-#         cells_data = _get_cells_data_from_csv(experiment_data_folder, num_of_cells)
-#         all_data = pd.concat(cells_data, axis=0)
-#         all_data.set_index(['cell_num'], append=True, inplace=True)
-#         all_data.index.rename(names=["sample", "cell_num"], inplace=True)
-#         time_series_len = len(cells_data[0])
-#
-#         logic = BaseLogic(cells_data, lags, cutoffs, experiment_data_folder)
-#         for lag in lags:
-#             for cutoff in cutoffs:
-#                 corrs_passed_cutoff_by_lag, out, pairs_edges, total_pairs_passed_cutoff_by_rounded_distance, \
-#                 pairs_passed_cutoff_max_corr_and_distance_and_lags, pairs_corr_at_fixed_lag_above_p_val = logic.xcorr_w_lags(cells_data, num_of_cells,
-#                                                                                         time_series_len, lag,
-#                                                                                         cutoff=cutoff)
-#
-#                 xcorr_data_tuple = (corrs_passed_cutoff_by_lag, out, pairs_edges, total_pairs_passed_cutoff_by_rounded_distance,
-#                                     pairs_passed_cutoff_max_corr_and_distance_and_lags, pairs_corr_at_fixed_lag_above_p_val)
-#
-#                 with open(f"{experiment_data_folder}xcorr_lag_{lag}_cutoff_{cutoff}.pkl", 'wb+') as pkl:
-#                     pickle.dump(xcorr_data_tuple, pkl, pickle.HIGHEST_PROTOCOL)
-#
-#         print(f"<<<<<< FINISHED WORKING ON DIR: {data_folder_subdir} <<<<<<")
-#
 
 if __name__ == '__main__':
     raw_data_loc = '../data/raw_timeseries/'

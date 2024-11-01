@@ -7,7 +7,6 @@ import scipy.stats
 
 from common.euclidean_distance import EuclideanMatrixSingleton
 
-
 def xcorr_w_lags(cells_data: List[pd.DataFrame], cell_num: int, time_series_len: int, lags: int,
                  correlation_cutoff: float = -1.0, p_val_cutoff=0.05):
     """ Calculate CrossCorrelation of all unique pairs in cells_data."""

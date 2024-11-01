@@ -1,8 +1,6 @@
 import json
-
 import numpy as np
 import pandas as pd
-
 from common.constants import EXPERIMENTS_LOCATION, ARCOS_OUTPUT_LOCATION
 from common.density import get_cell_density, get_activations_per_cell
 from common.frame_to_frequency import FrequencyTranslator
