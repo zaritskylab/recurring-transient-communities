@@ -60,7 +60,7 @@ def plot(df: pd.DataFrame, x_labels_and_order, fig_name):
 
 
 def analyze_aggregated_data(fig_name, x_labels_and_order):
-    df = pd.read_csv(f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}/agg_results_OLD.csv')
+    df = pd.read_csv(f'{HOTSPOTS_SHUFFLE_ANALYSIS_LOCATION}/aggregated_results.csv')
     df['hotspots'] = 1
 
     df = df[df['experiment_type'].isin(x_labels_and_order)]
@@ -95,4 +95,3 @@ def main():
     selected_experiments = ['late_second_zpg_RNAi', 'early_third_zpg_RNAi', 'mid_third_zpg_RNAi']
     analyze_aggregated_data(x_labels_and_order=selected_experiments, fig_name='G')
 
-main()

@@ -93,5 +93,5 @@ def analyze_aggregated_data():
     plot(df, x_labels_and_order)
 
 
-if __name__ == '__main__':
+def main():
     analyze_aggregated_data()

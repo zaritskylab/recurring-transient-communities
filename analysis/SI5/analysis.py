@@ -42,3 +42,5 @@ def plot():
     plt.savefig(f'{SI_FIGURES_LOCATION}Fig_SI5.png')
     plt.close()
 
+def main():
+    plot()

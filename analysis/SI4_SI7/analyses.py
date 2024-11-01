@@ -31,16 +31,13 @@ def plot(df: pd.DataFrame, x_col: str, y_col: str, title: str,
         activations = experiment_df[y_col].to_list()
         plt.scatter(densities, activations, label=experiment_type)
 
-    xlabel = "Mean Local Density (#)" if x_col == "mean_density" else "Cell Activation Probability (%)"
-    ylabel = "Cell Probability for Event (%)" if y_col == "MEC_per_minute" else "Cell Activation Probability (%)"
+    xlabel = "Mean local cell density (# of cells/\u03BCm\u00b2)" if x_col == "mean_density" else "Mean activation rate (mean activations/minute)"
+    ylabel = "MEC rate (MEC/minute)" if y_col == "MEC_per_minute" else "Mean activation rate (mean activations/minute)"
     plt.xlabel(xlabel, fontsize=22)
     plt.ylabel(ylabel, fontsize=22)
 
-    x_ticks = [0, 1, 2, 3] if x_col == 'mean_density' else [0, 0.15, 0.3]
-    y_ticks = [0, 0.06, 0.12] if y_col == 'MEC_per_minute' else [0, 0.15, 0.3]
-
-    plt.xticks(x_ticks, fontsize=16)
-    plt.yticks(y_ticks, fontsize=16, rotation=90)
+    plt.xticks( fontsize=16)
+    plt.yticks( fontsize=16, rotation=90)
     if len(selected_experiments) > 1:
         plt.legend(fontsize=14)
 

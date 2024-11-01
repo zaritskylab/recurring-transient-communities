@@ -135,5 +135,3 @@ def analyze():
 def main():
     analyze()
 
-
-main()

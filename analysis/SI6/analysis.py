@@ -12,15 +12,15 @@ from data_layer.cross_correlation import xcorr_w_lags
 from data_layer.preprocess_data import _get_cells_data_from_csv
 
 
-def plot(df, title, group_a, group_b, bins, figname):
+def plot(df, title, group_a, group_b, bins):
     relevant_df = df[df['bin'].isin(bins)]
 
     # Here we plot the scores of pairs that are in the same community vs. the scores of pairs that are not in the same community,
     # as a scatter plot (using sns package) with distance bins (+random float) as x axis
     fig = plt.figure()
     sns.violinplot(x='bin', y='score', hue='type', data=relevant_df, split=False, inner="quart", linewidth=2)
-    plt.xlabel('Pairs Distance (\u03BCm)')
-    plt.ylabel('Pairs Correlation Score')
+    plt.xlabel('Cell pair distance (\u03BCm)')
+    plt.ylabel('Cell pair correlation')
     plt.savefig(f'{SI_FIGURES_LOCATION}Fig_SI6.png')
     plt.close(fig=fig)
 
@@ -137,5 +137,4 @@ def main():
                                 for curr_bin, scores in out_community_scores_by_bins.items() for score in scores])
     unify_df = pd.concat([in_df, out_df])
 
-    plot(unify_df, 'community_vs_not_community', group_a='intra community', group_b='inter community', bins=distance_bins,
-         figname='reviewer_2_comment_3_1')
+    plot(unify_df, 'community_vs_not_community', group_a='intra community', group_b='inter community', bins=distance_bins)
