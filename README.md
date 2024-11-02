@@ -2,6 +2,13 @@
 # main module
 [main.py](main.py) module is the main code that runs all analyses.
 It generates aggregated data based on the preprocessed and shuffled data.
+
+To successfully tun the code, you need to have python version of 3.9 or higher installed on your machine.
+To install the required packages, run the following command in the terminal:
+```bash
+pip install -r requirements.txt
+```
+This will install all required packages.
 ### generate_cross_experiment_spatial_significance_data 
 This function generates the data for the spatial significance analysis, as in Figures 1-3.
 ### generate_per_sample_community_statistics
