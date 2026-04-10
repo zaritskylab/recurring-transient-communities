@@ -28,3 +28,9 @@ The main code doesn't run it directly, as this function is randomized and may re
 [preprocess_data.py](data_layer%2Fpreprocess_data.py) module is responsible for preprocessing the raw data received from the imaging.
 The main code doesn't run it directly, as we are using the preprocessed data.
 Tha module is included in the repository for reference.
+
+---
+## License:
+This work is released under the MIT license.
+
+
